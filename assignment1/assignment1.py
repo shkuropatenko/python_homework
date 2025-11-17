@@ -26,3 +26,24 @@ def calc(val1, val2, operator = "multiply"):
         return val1 / val2
     case "modulo":
       return val1 % val2
+
+def data_type_conversion(value, type):
+  match type:
+    case "int":
+      try:
+        int(value)
+      except:
+        return f"You can't convert {value} into a {type}."
+      else:
+        return int(value)
+    case "float":
+      try:
+        float(value)
+      except:
+        return f"You can't convert {value} into a {type}."
+      else:
+        return float(value)
+    case "str":
+        return str(value)
+      
+
