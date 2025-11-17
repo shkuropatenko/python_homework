@@ -53,7 +53,7 @@ def grade(*args):
     return "Invalid data was provided."
   else:
     grade = sum(args) / 3
-    
+
     if grade >= 90:
       return "A"
     elif (grade >= 80) and (grade < 90):
@@ -65,3 +65,6 @@ def grade(*args):
     else:
       return "F"
 
+def repeat(str, count):
+  for i in range(count):
+    return str * count
