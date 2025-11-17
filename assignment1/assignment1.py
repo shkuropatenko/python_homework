@@ -68,3 +68,18 @@ def grade(*args):
 def repeat(str, count):
   for i in range(count):
     return str * count
+
+def student_scores(*args, **kwargs):
+  if args[0] == "mean":
+    sum = 0
+    for value in kwargs.values():
+      sum += value
+    return sum / len(kwargs)
+  elif args[0] == "best":
+    num = 0
+    name = ""
+    for key, value in kwargs.items():
+      if num < value:
+        num = value
+        name = key
+    return name
