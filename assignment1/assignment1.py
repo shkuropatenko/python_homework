@@ -45,5 +45,4 @@ def data_type_conversion(value, type):
         return float(value)
     case "str":
         return str(value)
-      
 
