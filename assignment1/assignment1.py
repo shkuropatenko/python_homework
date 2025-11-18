@@ -83,3 +83,26 @@ def student_scores(*args, **kwargs):
         num = value
         name = key
     return name
+
+def titleize(str):
+  words = str.split()
+  arr_words = ["a", "on", "an", "the", "of", "and", "is", "in"]
+  capital_letter = ""
+  new_words = []
+  for i, word in enumerate(words):
+    if i == 0:
+      capital_letter = word[0].capitalize()
+      updated_word = capital_letter + word[1:]
+      new_words.append(updated_word)
+    elif i == len(words) - 1:
+      print(word)
+      capital_letter = word[0].capitalize()
+      updated_word = capital_letter + word[1:]
+      new_words.append(updated_word)
+    elif word not in arr_words:
+      capital_letter = word[0].capitalize()
+      updated_word = capital_letter + word[1:]
+      new_words.append(updated_word)
+    else:
+      new_words.append(word)
+  return " ".join(new_words)
