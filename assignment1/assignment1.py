@@ -106,3 +106,12 @@ def titleize(str):
     else:
       new_words.append(word)
   return " ".join(new_words)
+
+def hangman(secret, guess):
+  result = ""
+  for i, letter in enumerate(secret):
+    if letter in guess:
+      result += letter
+    else:
+      result += "_"
+  return result
