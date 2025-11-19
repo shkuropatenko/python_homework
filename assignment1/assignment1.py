@@ -115,3 +115,21 @@ def hangman(secret, guess):
     else:
       result += "_"
   return result
+
+def pig_latin(str):
+  vowels = ["a", "e", "i", "o", "u"]
+  consonants = ""
+  words = str.split()
+
+  for i, word in enumerate(words):
+    for j, letter in enumerate(word):
+      if letter in vowels:
+        return word + "ay"
+      elif word[:2] == "qu":
+        return word[2:] + "quay"
+      else:
+        if letter not in vowels:
+          consonants += letter
+          str = word + consonants
+          return str[i + 1 :] + "ay"
+  return " ".join(words)
