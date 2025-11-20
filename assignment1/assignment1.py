@@ -52,8 +52,7 @@ def grade(*args):
   except:
     return "Invalid data was provided."
   else:
-    grade = sum(args) / 3
-
+    grade = sum(args) / len(args)
     if grade >= 90:
       return "A"
     elif (grade >= 80) and (grade < 90):
