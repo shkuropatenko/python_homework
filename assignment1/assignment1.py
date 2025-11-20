@@ -66,8 +66,10 @@ def grade(*args):
       return "F"
 
 def repeat(str, count):
+  result = ""
   for i in range(count):
-    return str * count
+    result = str * count
+  return result
 
 def student_scores(*args, **kwargs):
   if args[0] == "mean":
