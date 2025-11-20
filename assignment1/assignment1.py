@@ -96,7 +96,6 @@ def titleize(str):
       updated_word = capital_letter + word[1:]
       new_words.append(updated_word)
     elif i == len(words) - 1:
-      print(word)
       capital_letter = word[0].capitalize()
       updated_word = capital_letter + word[1:]
       new_words.append(updated_word)
@@ -117,20 +116,26 @@ def hangman(secret, guess):
       result += "_"
   return result
 
-def pig_latin(str):
+def pig_latin(text):
   vowels = ["a", "e", "i", "o", "u"]
-  consonants = ""
-  words = str.split()
+  words = text.split()
+  result_words = []
 
-  for i, word in enumerate(words):
-    for j, letter in enumerate(word):
-      if letter in vowels:
-        return word + "ay"
-      elif word[:2] == "qu":
-        return word[2:] + "quay"
-      else:
-        if letter not in vowels:
-          consonants += letter
-          str = word + consonants
-          return str[i + 1 :] + "ay"
-  return " ".join(words)
+  for word in words:
+    if word[0] in vowels:
+      result_word = word + "ay"
+    else:
+      consonants = ""
+      idx = 0
+      while idx < len(word) and word[idx] not in vowels:
+        
+        if word[idx] == "q" and idx + 1 < len(word) and word[idx + 1] == "u":
+          consonants += "qu"
+          idx += 2
+        else:
+          consonants += word[idx]
+          idx += 1
+          
+        result_word = word[idx:] + consonants + "ay"
+    result_words.append(result_word)
+  return " ".join(result_words)
