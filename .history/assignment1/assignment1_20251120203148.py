@@ -12,12 +12,11 @@ def calc(val1, val2, operator = "multiply"):
       return val1 - val2
     case "multiply":
       try:
-        num1 = float(val1)
-        num2 = float(val2)
-      except (TypeError, ValueError):
+        int(val1)
+      except:
         return "You can't multiply those values!"
       else:
-        return num1 * num2
+        return val1 * val2
     case "divide":
       try:
         val1 / val2
