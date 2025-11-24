@@ -25,3 +25,21 @@ except Exception as e:
   if message:
     print(f"Exception message: {message}")
   print(f"Stack trace: {stack_trace}")
+
+# Task 3
+def column_index(name):
+  return employees["fields"].index(name)
+employee_id_column = column_index("employee_id")
+
+# Task 4
+def first_name(row_number):
+  first_name_col = column_index("first_name") 
+  return employees["rows"][row_number][first_name_col]
+
+# Task 5
+def employee_find(employee_id):
+  def employee_match(row):
+   return int(row[employee_id_column]) == employee_id
+  
+  matches=list(filter(employee_match, employees["rows"]))
+  return matches
