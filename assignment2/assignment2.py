@@ -43,3 +43,8 @@ def employee_find(employee_id):
   
   matches=list(filter(employee_match, employees["rows"]))
   return matches
+
+# Taks 6
+def employee_find_2(employee_id):
+  matches = list(filter(lambda row : int(row[employee_id_column]) == employee_id , employees["rows"]))
+  return matches
