@@ -34,7 +34,7 @@ employee_id_column = column_index("employee_id")
 # Task 4
 def first_name(row_number):
   first_name_col = column_index("first_name")
-  
+
   return employees["rows"][row_number][first_name_col]
 
 # Task 5
@@ -58,3 +58,10 @@ def sort_by_last_name():
   employees["rows"].sort(key=lambda row: row[last_name_col])
   
   return employees["rows"]
+
+# Task 8
+def employee_dict(employer_row):
+  dict_results = dict(
+    zip(employees["fields"][1:], employer_row[1:])
+  )
+  return(dict_results)
