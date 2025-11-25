@@ -65,3 +65,13 @@ def employee_dict(employer_row):
     zip(employees["fields"][1:], employer_row[1:])
   )
   return(dict_results)
+
+# Task 9
+def all_employees_dict():
+  result = {}
+  for row in employees["rows"]:
+    employee_id = row[0]
+    info = employee_dict(row)
+    result[employee_id] = info
+
+  return result
