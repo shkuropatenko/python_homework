@@ -1,4 +1,5 @@
 import csv
+import os
 
 try:
   def read_employees():
@@ -75,3 +76,7 @@ def all_employees_dict():
     result[employee_id] = info
 
   return result
+
+# Task 10
+def get_this_value():
+  return os.getenv("THISVALUE")
