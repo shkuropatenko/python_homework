@@ -1,6 +1,7 @@
 import csv
 import os
 import custom_module
+from datetime import datetime
 
 try:
   def read_employees():
@@ -115,3 +116,11 @@ def create_minutes_set():
   
   return combined
 minutes_set = create_minutes_set()
+
+# Task 14
+def create_minutes_list():
+  minutes_list_raw = list(minutes_set)
+  mapperd = map(lambda x: (x[0], datetime.strptime(x[1], "%B %d, %Y")), minutes_list_raw)
+
+  return list(mapperd)
+minutes_list = create_minutes_list()
