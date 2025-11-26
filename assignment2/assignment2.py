@@ -1,5 +1,6 @@
 import csv
 import os
+import custom_module
 
 try:
   def read_employees():
@@ -80,3 +81,28 @@ def all_employees_dict():
 # Task 10
 def get_this_value():
   return os.getenv("THISVALUE")
+
+# Task 11
+def set_that_secret(secret_key):
+  custom_module.set_secret(secret_key)
+
+# Task 12
+def read_minutes():
+  with open("../csv/minutes1.csv", "r") as file1, open("../csv/minutes2.csv", "r") as file2:
+      v1 = csv.reader(file1)
+      v2 = csv.reader(file2)
+
+      def read_minutes_people(file): 
+        minutes_dict = {}
+        minutes_rows = []
+        for i, row in enumerate(file):
+          if i == 0:
+            minutes_dict["fields"] = row
+          else:
+            minutes_rows.append(tuple(row))
+        minutes_dict["rows"] = minutes_rows
+        return minutes_dict
+      minutes1 = read_minutes_people(v1)
+      minutes2 = read_minutes_people(v2)
+  return minutes1, minutes2
+minutes1, minutes12 = read_minutes()
