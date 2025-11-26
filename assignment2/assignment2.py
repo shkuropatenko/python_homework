@@ -105,4 +105,13 @@ def read_minutes():
       minutes1 = read_minutes_people(v1)
       minutes2 = read_minutes_people(v2)
   return minutes1, minutes2
-minutes1, minutes12 = read_minutes()
+minutes1, minutes2 = read_minutes()
+
+# Task 13
+def create_minutes_set():
+  set1 = set(minutes1["rows"])
+  set2 = set(minutes2["rows"])
+  combined = set1.union(set2)
+  
+  return combined
+minutes_set = create_minutes_set()
