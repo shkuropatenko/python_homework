@@ -124,3 +124,23 @@ def create_minutes_list():
 
   return list(mapperd)
 minutes_list = create_minutes_list()
+
+# Task 15
+def write_sorted_list():
+  global minutes_list
+  minutes_list.sort(key=lambda x: x[1])
+  converted = list(
+    map(
+      lambda x: (x[0], x[1].strftime("%B %d, %Y")),
+      minutes_list
+    )
+  )
+
+  with open("./minutes.csv", "w") as file:
+    writer = csv.writer(file)
+    writer.writerow(minutes1["fields"])
+    for row in converted:
+      writer.writerow(list(row))
+  minutes_list = converted
+
+  return converted
