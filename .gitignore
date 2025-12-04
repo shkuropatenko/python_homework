@@ -6,3 +6,7 @@ __pycache__/
 .vscode
 CACHEDIR.TAG
 .venv/
+.history
+example.txt
+example.csv
+TEST.ipynb
