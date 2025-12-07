@@ -7,7 +7,20 @@ logger.addHandler(logging.FileHandler("./decorator.log", "a"))
 def logger_decorator(func):
   def wrapper(*args, **kwargs):
     logger.info(f"function {func.__name__} was called")
-    return func(*args, **kwargs)
+    result = func(*args, **kwargs)
+    if args:
+      positional = list(args)
+    else:
+      positional = "none"
+    if kwargs:
+      keyword = kwargs
+    else:
+      keyword = "none"
+    logger.info(f"function: {func.__name__}")
+    logger.info(f"positional parameters: {positional}")
+    logger.info(f"keyword parameters: {keyword}")
+    logger.info(f"return: {result}")
+    return result
   return wrapper
   
 @logger_decorator
@@ -19,7 +32,6 @@ def say_hello():
 def always_true(*args):
     print(*args, "*args")
     return True
-
 
 @logger_decorator
 def return_decorator(**kwargs):
