@@ -1,0 +1,9 @@
+Logger test successful
+Logger test successful
+Logger test successful
+function say_hello was called
+function always_true was called
+function return_decorator was called
+function say_hello was called
+function always_true was called
+function return_decorator was called
