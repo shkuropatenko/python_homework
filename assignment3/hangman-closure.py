@@ -1,26 +1,30 @@
 def make_hangman(secret_word):
   guesses = []
-  idx = 0
-  result = ""
 
   def hangman_closure(letter):
-    if letter in secret_word[idx]:
-      guesses.append(letter)
+    guesses.append(letter)
+    display = ""
+
+    for ch in secret_word:
+      if ch in guesses:
+        display += ch
+      else:
+        display += "_"
+    print(display)
+
+    if "_" not in display:
+      return True
     else:
-      guesses.append("_")
+      return False
 
-  while idx < len(secret_word):
-    user_input = input("Type your letter ")
-    hangman_closure(user_input)
-    idx += 1
+  return hangman_closure
 
-  result = "".join(guesses)
-  print(result)
+if __name__ == "__main__":
+  secret = input("Enter secret word: ")
+  game = make_hangman(secret)
+  finished = False
 
-  if result == secret_word:
-    return True
-  else:
-    return False
-
-
-print(make_hangman("alphabet"))
+  while not finished:
+    letter = input("Guess a letter: ")
+    finished = game(letter)
+  print("You guessed the word!")
