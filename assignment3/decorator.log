@@ -1,0 +1,30 @@
+function say_hello was called
+function: say_hello
+positional parameters: none
+keyword parameters: none
+return: None
+function always_true was called
+function: always_true
+positional parameters: [1, 2, 3, 'test']
+keyword parameters: none
+return: True
+function return_decorator was called
+function: return_decorator
+positional parameters: none
+keyword parameters: {'name': 'Dmytro', 'age': 30}
+return: <function logger_decorator at 0x000001902926A200>
+function say_hello was called
+function: say_hello
+positional parameters: none
+keyword parameters: none
+return: None
+function always_true was called
+function: always_true
+positional parameters: [1, 2, 3, 'test']
+keyword parameters: none
+return: True
+function return_decorator was called
+function: return_decorator
+positional parameters: none
+keyword parameters: {'name': 'Dmytro', 'age': 30}
+return: <function logger_decorator at 0x0000029E6D60A200>
