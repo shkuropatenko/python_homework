@@ -23,4 +23,12 @@ task2_employees = pd.read_csv("employees.csv")
 json_employees = pd.read_json("./additional_employees.json")
 
 more_employees = pd.concat([task2_employees, json_employees], ignore_index=True)
-print(more_employees)
+
+# Task 3
+first_three = more_employees.head(3)
+
+last_two = more_employees.tail(2)
+
+employee_shape = more_employees.shape
+
+more_employees.info()
