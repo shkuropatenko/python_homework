@@ -86,6 +86,30 @@ try:
             print(row)
 
 
+        print("\n--- Task 4: Employees with more than 5 orders ---")
+
+        cursor.execute("""
+        SELECT
+          e.employee_id,
+          e.first_name,
+          e.last_name,
+          COUNT(o.order_id) AS order_count
+        FROM employees e
+        JOIN orders o ON o.employee_id = e.employee_id
+        GROUP BY e.employee_id, e.first_name, e.last_name
+        HAVING COUNT(o.order_id) > 5
+        ORDER BY order_count DESC;
+        """)
+
+        for row in cursor.fetchall():
+            print(row)
+
+
+
 
 except sqlite3.Error as e:
     print("DB error:", e)
+
+
+
+
