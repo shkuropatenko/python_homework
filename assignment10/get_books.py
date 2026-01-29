@@ -69,6 +69,14 @@ def main():
             )
 
         df = pd.DataFrame(results)
+        
+        # TASK 4: write CSV
+        df.to_csv("assignment10/get_books.csv", index=False)
+
+        # TASK 4: write JSON
+        with open("assignment10/get_books.json", "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2, ensure_ascii=False)
+
         print(df)
 
     finally:
