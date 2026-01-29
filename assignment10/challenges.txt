@@ -1,0 +1,3 @@
+The main challenge was that the OWASP page contains multiple places where the same “A01…A10” links appear (navigation menu and the main content).
+To avoid scraping the wrong section, I anchored the XPath on the “Top 10:2025 List” heading and then selected the first ordered list (<ol>) right after it.
+Another small issue was making sure the page finished loading, so I added a short sleep before extracting elements
